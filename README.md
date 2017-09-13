@@ -3,3 +3,9 @@
 
 
 欢迎在知乎上关注[我](https://www.zhihu.com/people/henry-li-03/activities)和我的知乎专栏[《前端零栈》](https://zhuanlan.zhihu.com/fr0nt-end/)
+
+
+## Branches
+
+* [master](https://github.com/MagicCube/cdn-pub-automation)
+* [devleopment](https://github.com/MagicCube/cdn-pub-automation/tree/development)
