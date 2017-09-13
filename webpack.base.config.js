@@ -11,7 +11,7 @@ const ASSETS_PUBLIC_PATH = '/assets/';
 module.exports = {
   context: SRC_PATH,
   entry: {
-    cpa: './cpa', // CPA 是 cdn-pub-automation 的缩写
+    cpa: ['./cpa'], // CPA 是 cdn-pub-automation 的缩写
     vendor: './vendor',
   },
   resolve: {
