@@ -2,7 +2,7 @@
 
 const webpack = require('webpack');
 
-const config = require('./webpack.config.base');
+const config = require('./webpack.base.config');
 
 module.exports = config;
 config.module.rules.push(

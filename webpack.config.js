@@ -3,7 +3,7 @@
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-const config = require('./webpack.config.base');
+const config = require('./webpack.base.config');
 
 config.module.rules.push(
   {
