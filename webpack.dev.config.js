@@ -5,6 +5,13 @@ const webpack = require('webpack');
 const config = require('./webpack.base.config');
 
 module.exports = config;
+
+config.devServer = {
+  contentBase: './public',
+  hot: true,
+  publicPath: '/assets/'
+};
+
 config.module.rules.push(
   {
     enforce: 'pre',
@@ -58,7 +65,8 @@ Object.keys(config.entry).forEach((key) => {
   if (key !== 'vendor') {
     config.entry[key].unshift(
       'react-hot-loader/patch',
-      'webpack-hot-middleware/client?quiet=true'
+      'webpack-dev-server/client?http://0.0.0.0:8080',
+      'webpack/hot/only-dev-server'
     );
   }
 });
