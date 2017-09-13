@@ -19,6 +19,11 @@
   },
   "homepage": "https://zhuanlan.zhihu.com/p/29231319",
   "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-1": "^6.24.1",
     "clean-webpack-plugin": "^0.1.16",
     "css-loader": "^0.28.7",
     "extract-text-webpack-plugin": "^3.0.0",
@@ -30,6 +35,7 @@
     "webpack-hot-middleware": "^2.19.1"
   },
   "dependencies": {
+    "babel-polyfill": "^6.26.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1"
   }
