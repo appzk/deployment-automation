@@ -1,3 +1,3 @@
 import 'babel-polyfill';
-import 'react-dom';
-import 'react';
+
+// 在此添加你需要的第三方库
