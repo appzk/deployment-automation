@@ -55,22 +55,14 @@ config.plugins.push(
 
 // Hot module replacement
 Object.keys(config.entry).forEach((key) => {
-  if (!Array.isArray(config.entry[key])) {
-    // 这里有一个我个人的私有约定，如果 entry 是一个数组，则证明它需要被 hot module replaced
-    if (Array.isArray(config.entry[key])) {
-      const entry = config.entry[key];
-      config.entry[key] = [
-        entry
-      ];
-    }
-    // vendor 不需要 hot module replacement
-    if (key !== 'vendor') {
-      config.entry[key].unshift(
-        'react-hot-loader/patch',
-        'webpack-dev-server/client?http://0.0.0.0:8080',
-        'webpack/hot/only-dev-server'
-      );
-    }
+  // 这里有一个我个人的私有约定，如果 entry 是一个数组，则证明它需要被 hot module replaced
+  // vendor 不需要 hot module replacement
+  if (Array.isArray(config.entry[key])) {
+    config.entry[key].unshift(
+      'react-hot-loader/patch',
+      'webpack-dev-server/client?http://0.0.0.0:8080',
+      'webpack/hot/only-dev-server'
+    );
   }
 });
 config.plugins.push(
