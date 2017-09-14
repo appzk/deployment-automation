@@ -16,24 +16,24 @@ elif [ $BRANCH != "(development)" ]; then
 else
   echo "\033[32m开始云端导报和发布... \033[0m"
   echo
-  echo "\033[32m正在提交到远程 development 分支... \033[0m"
+  echo "\033[32m[远程] 正在提交到 development 分支... \033[0m"
   echo
   git push origin development
   echo
-  echo "\033[32m正在本地与 master 分支合并... \033[0m"
+  echo "\033[32m[本地] 正在将 development 与 master 分支合并... \033[0m"
   echo
   git checkout master
   git merge development --no-ff --quiet --no-edit
   echo
-  echo "\033[32m正在提交到远程 master 分支... \033[0m"
+  echo "\033[32m[远程] 正在提交到 master 分支... \033[0m"
   echo
   git push origin master
   echo
-  echo "\033[32m已完成 master 分支合并，并已触发云端打包发布流程。 \033[0m"
+  echo "\033[32m[远程] 已完成 master 分支合并，并已触发云端打包发布流程。 \033[0m"
   echo
   git checkout development
   echo
-  echo "\033[32m已返回本地 development 分支。 \033[0m"
+  echo "\033[32m[本地] 已返回 development 分支。 \033[0m"
   echo
   echo "请在 Travis Dashboard 中查看结果:"
   echo "\033[36mhttps://www.travis-ci.org/MagicCube/cdn-pub-automation/ \033[0m"
