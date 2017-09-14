@@ -8,7 +8,7 @@ function parse_git_branch {
 
 BRANCH=$(parse_git_branch)
 if [ $BRANCH == "(development*)" ]; then
-  echo "请先完成本地提交，再重新尝试"
+  echo "$BRANCH 尚未完成本地提交或未 push 到远程。"
 elif [ $BRANCH != "(development)" ]; then
-  echo "当前不是 development 分支，请先执行 git checkout development"
+  echo "$BRANCH，当前不是 development 分支，请先执行 git checkout development"
 fi
