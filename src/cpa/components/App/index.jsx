@@ -6,7 +6,7 @@ import styles from './index.less';
 export default class App extends PureComponent {
   static propTypes = {
     lastBuildHash: PropTypes.string.isRequired,
-    lastBuildTime: PropTypes.string.isRequired
+    lastBuildTime: PropTypes.objectOf(Date).isRequired
   }
 
   render() {
@@ -17,7 +17,7 @@ export default class App extends PureComponent {
     return (
       <div className={styles.container}>
         <h1>Welcome to cdn-pub-automation</h1>
-        <h3>Last build time: {lastBuildTime}</h3>
+        <h3>Last build time: {lastBuildTime.toLocaleString()}</h3>
         <h3>Last build hash: {lastBuildHash}</h3>
         <div>
           For more details, please visit&nbsp;
