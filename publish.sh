@@ -14,7 +14,7 @@ elif [ $BRANCH != "(development)" ]; then
   echo "\033[31m[错误] 当前 $BRANCH 不是 development 分支，请先执行 git checkout development 切换分支。\033[0m"
   echo
 else
-  echo "\033[32m开始云端导报和发布... \033[0m"
+  echo "\033[32m开始云端自动化打包与发布... \033[0m"
   echo
   echo "\033[32m[远程] 正在将本地更改提交到 development 分支... \033[0m"
   echo
