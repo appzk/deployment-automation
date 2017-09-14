@@ -17,8 +17,8 @@ if (!qiniuSK) {
   throw new Error('QINIU_SK must be provided in the envrironment variables.');
 }
 
-// 请参考 https://github.com/lyfeyaj/qn-webpack
-const QiniuPlugin = require('qn-webpack');
+// 请参考 https://github.com/longtian/qiniu-webpack-plugin
+const QiniuPlugin = require('qiniu-webpack-plugin');
 
 // 请参考我开发的 [webpack-plugin-hash](https://github.com/MagicCube/webpack-plugin-hash)
 const HashPlugin = require('webpack-plugin-hash');
@@ -33,11 +33,11 @@ config.output.publicPath = `http://${qiniuCdnDomain}/[hash]/`;
 config.plugins.push(
   new QiniuPlugin({
     // 即 AK
-    accessKey: qiniuAK,
+    ACCESS_KEY: qiniuAK,
     // 即 SK
-    secretKey: qiniuSK,
+    SECRET_KEY: qiniuSK,
     bucket: qiniuBucket,
-    path: '[hash]/'
+    path: '[hash]'
   }),
   new HashPlugin({
     callback: (error, hash) => {
