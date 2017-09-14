@@ -29,8 +29,7 @@ if (!qiniuSK) {
 const config = require('./webpack.config');
 
 // 用 URL 替换原先的绝对路径
-// 如果你的网站采用了 HTTPS，则请替换为 //${qiniuCDNDomain}/[hash]/
-config.output.publicPath = `http://${qiniuCDNDomain}/[hash]/`;
+config.output.publicPath = `//${qiniuCDNDomain}/[hash]/`;
 
 config.plugins.push(
   new QiniuPlugin({
@@ -45,7 +44,7 @@ config.plugins.push(
     callback: (error, hash) => {
       console.info('\n');
       console.info('*'.repeat(80));
-      console.info(`Root URL of assets: http://${qiniuCDNDomain}/${hash}/`);
+      console.info(`Root URL of assets: https://${qiniuCDNDomain}/${hash}/`);
       console.info('Generating index.html...');
       htmlPublisher.transform(
         `${config.context}/cpa/index.html`,
@@ -57,7 +56,7 @@ config.plugins.push(
           }
         }
       );
-      console.info('Generated. Please visit http://magiccube.github.io/cdn-pub-automation/');
+      console.info('Generated. Please visit https://magiccube.github.io/cdn-pub-automation/');
       console.info('*'.repeat(80));
       console.info('\n');
     }
