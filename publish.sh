@@ -21,7 +21,7 @@ else
   echo "正在与 master 分支合并..."
   echo
   git checkout master
-  git merge development --no-ff --quiet
+  git merge development --no-ff --quiet --no-edit
   echo
   echo "正在提交到远程 master 分支..."
   echo
