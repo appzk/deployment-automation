@@ -10,6 +10,14 @@ const config = require('./webpack.base.config');
 // 所有的样式将被独立抽取为 CSS 文件
 config.module.rules.push(
   {
+    test: /\.css$/,
+    use: ExtractTextPlugin.extract({
+      use: ['css-loader'],
+      fallback: 'style-loader'
+    }),
+    include: /node_modules/
+  },
+  {
     test: /\.less$/,
     use: ExtractTextPlugin.extract(
       {
