@@ -36,6 +36,8 @@ after_success: npm run pub
 
 # 在本例中，当 pub 执行成功后，我们自动更新 gh-pages 分支，即 github.io 的分支
 #
+# 详情请参考 https://docs.travis-ci.com/user/deployment/pages/
+#
 # 在真实情况下，应将 hash 传递给你自己的服务器集群，然后更新 js、css 等资源的引用
 # 地址，从而完成部署
 deploy:
