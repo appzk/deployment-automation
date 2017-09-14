@@ -12,7 +12,7 @@ const qiniuAK = 'i2MWHt0sGlWTk5xapixEaXAn3XzfsCkoOJrAJ7Kr';
 // 通过下面的链接创建新的
 // https://portal.qiniu.com/bucket/create
 const qiniuBucket = 'test';
-const qiniuCdnDomain = '7xozrb.com1.z0.glb.clouddn.com';
+const qiniuCDNDomain = '7xozrb.com1.z0.glb.clouddn.com';
 
 // 我们不希望将秘钥（即 SK）写死在 config 里上传至 Github。
 // 因此我们选择通过环境变量的形式传递 SK，并由 Travis 提供的工具进
@@ -26,8 +26,8 @@ if (!qiniuSK) {
 const config = require('./webpack.config');
 
 // 用 URL 替换原先的绝对路径
-// 如果你的网站采用了 HTTPS，则请替换为 //${qiniuCdnDomain}/[hash]/
-config.output.publicPath = `http://${qiniuCdnDomain}/[hash]/`;
+// 如果你的网站采用了 HTTPS，则请替换为 //${qiniuCDNDomain}/[hash]/
+config.output.publicPath = `http://${qiniuCDNDomain}/[hash]/`;
 
 config.plugins.push(
   new QiniuPlugin({
@@ -42,7 +42,7 @@ config.plugins.push(
     callback: (error, hash) => {
       console.info('\n');
       console.info('*'.repeat(80));
-      console.info(`Root URL of assets: http://${qiniuCdnDomain}/${hash}/`);
+      console.info(`Root URL of assets: http://${qiniuCDNDomain}/${hash}/`);
       console.info('*'.repeat(80));
       console.info('\n');
     }
