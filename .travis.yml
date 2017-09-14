@@ -18,6 +18,10 @@ node_js:
 cache:
   directories: node_modules
 
+before_install:
+- sudo apt-get install traceroute
+- traceroute uc.qbox.me
+
 # 有一个好习惯是在云端再次执行一次测试，然后再打包上传
 # 因此，我们保留下面的这个默认 script
 script: npm run test
