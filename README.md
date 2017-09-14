@@ -11,6 +11,7 @@
 
 * [主分支 master](https://github.com/MagicCube/cdn-pub-automation)
 * [开发分支 devleopment](https://github.com/MagicCube/cdn-pub-automation/tree/development)
+* [Github Pages 分支 gh-pages](https://github.com/MagicCube/cdn-pub-automation/tree/gh-pages)
 
 ## 自动化
 

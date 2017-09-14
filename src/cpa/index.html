@@ -14,8 +14,10 @@
 <body>
   <div id="mount-point"></div>
   <script>
-    window.LAST_BUILT_HASH = "{HASH}";
-    window.LAST_BUILT_TIME = new Date(Date.parse("{TIME}"));
+    window.LAST_BUILD = {
+      hash: "{HASH}",
+      time: new Date(Date.parse("{TIME}"))
+    };
   </script>
   <script src="{PUBLIC_PATH}/cpa.js"></script>
 </body>
