@@ -6,7 +6,7 @@ node_js:
 - '8'
 cache:
   directories: node_modules
-script: npm test
+script: curl https://uc.qbox.me/v2/query\?ak\=i2MWHt0sGlWTk5xapixEaXAn3XzfsCkoOJrAJ7Kr\&bucket\=test
 after_success: npm run pub
 env:
   global:
