@@ -2,10 +2,13 @@
 // 关于更多 Webpack 配置方法，请参考我另一篇文章[《为什么我们要做三份 Webpack 配置文件》](https://zhuanlan.zhihu.com/p/29161762)
 // 此为神秘的第四份 :)
 
+const path = require('path');
 // 请参考 https://github.com/longtian/qiniu-webpack-plugin
 const QiniuPlugin = require('qiniu-webpack-plugin');
 // 请参考我开发的 [webpack-plugin-hash](https://github.com/MagicCube/webpack-plugin-hash)
 const HashPlugin = require('webpack-plugin-hash');
+
+const htmlPublisher = require('./lib/html-publisher');
 
 // 请登录并访问 https://portal.qiniu.com/user/key 获得参数的值
 const qiniuAK = 'i2MWHt0sGlWTk5xapixEaXAn3XzfsCkoOJrAJ7Kr';
@@ -43,6 +46,18 @@ config.plugins.push(
       console.info('\n');
       console.info('*'.repeat(80));
       console.info(`Root URL of assets: http://${qiniuCDNDomain}/${hash}/`);
+      console.info('Generating index.html...');
+      htmlPublisher.transform(
+        `${config.context}/cpa/index.html`,
+        path.resolve('./gh-pages/index.html'),
+        config.output.publicPath.replace(/\[hash\]/g, hash),
+        (err) => {
+          if (err) {
+            throw err;
+          }
+        }
+      );
+      console.info('Generated. Please visit http://magiccube.github.io/cdn-pub-automation/');
       console.info('*'.repeat(80));
       console.info('\n');
     }
