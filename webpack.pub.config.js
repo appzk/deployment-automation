@@ -49,7 +49,8 @@ config.plugins.push(
       htmlPublisher.transform(
         `${config.context}/cpa/index.html`,
         path.resolve('./gh-pages/index.html'),
-        config.output.publicPath.replace(/\[hash\]/g, hash),
+        config.output.publicPath,
+        hash,
         (err) => {
           if (err) {
             throw err;
