@@ -11,8 +11,7 @@ function renderMountPoint() {
     (
       <AppContainer>
         <App
-          lastBuildHash={window.LAST_BUILT_HASH}
-          lastBuildTime={window.LAST_BUILT_TIME}
+          lastBuild={window.LAST_BUILD}
         />
       </AppContainer>
     ),
