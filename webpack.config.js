@@ -29,7 +29,7 @@ config.module.rules.push(
             {
               // 启用 CSS 模块化
               modules: true,
-              localIdentName: 'cpa-[path]-[local]'
+              localIdentName: '[hash:base64:5]'
             }
           },
           'less-loader'
