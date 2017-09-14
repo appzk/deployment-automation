@@ -13,8 +13,7 @@ const qiniuBucket = 'test';
 // 行加密。
 const qiniuSK = process.env.QINIU_SK; // 此处拿到的已经是 Travis 解密后的明文
 if (!qiniuSK) {
-  console.error('QINIU_SK must be provided in the envrironment variables.');
-  return;
+  throw new Error('QINIU_SK must be provided in the envrironment variables.');
 }
 
 // 请参考 https://github.com/lyfeyaj/qn-webpack
