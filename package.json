@@ -6,6 +6,7 @@
   "scripts": {
     "build": "webpack -p",
     "dev": "webpack-dev-server --config webpack.dev.config.js",
+    "pub": "webpack -p --config webpack.pub.config.js",
     "start": "npm run dev"
   },
   "repository": {
