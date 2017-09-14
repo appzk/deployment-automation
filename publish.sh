@@ -10,5 +10,5 @@ BRANCH=$(parse_git_branch)
 if [ $BRANCH == "(development*)" ]; then
   echo "$BRANCH 尚未完成本地提交或未 push 到远程。"
 elif [ $BRANCH != "(development)" ]; then
-  echo "$BRANCH，当前不是 development 分支，请先执行 git checkout development"
+  echo "当前$BRANCH不是 development 分支，请先执行 git checkout development 切换分支"
 fi
