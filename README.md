@@ -1,4 +1,6 @@
 # cdn-pub-automation
+[![Build Status](https://travis-ci.org/MagicCube/cdn-pub-automation.svg?branch=master)](https://travis-ci.org/MagicCube/cdn-pub-automation)
+
 一个用 Github + Travis CI + 七牛搭建的前端自动化发布示例。详见我在知乎上发表的文章[《利用 Git 和 CDN 在云端自动化部署前端工程》](https://zhuanlan.zhihu.com/p/29231319)。
 
 
