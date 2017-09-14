@@ -16,7 +16,7 @@ elif [ $BRANCH != "(development)" ]; then
 else
   echo "\033[32m开始云端导报和发布... \033[0m"
   echo
-  echo "\033[32m[远程] 正在提交到 development 分支... \033[0m"
+  echo "\033[32m[远程] 正在将本地更改提交到 development 分支... \033[0m"
   echo
   git push origin development
   echo
@@ -25,7 +25,7 @@ else
   git checkout master
   git merge development --no-ff --quiet --no-edit
   echo
-  echo "\033[32m[远程] 正在提交到 master 分支... \033[0m"
+  echo "\033[32m[远程] 正在将合并结果提交到 master 分支... \033[0m"
   echo
   git push origin master
   echo
