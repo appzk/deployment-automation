@@ -18,6 +18,8 @@ node_js:
 cache:
   directories: node_modules
 
+# Travis 在全球都有部署服务器，在某些时候可能会无法正常连接到七牛的服务器
+# 尝试了很多办法后，发现这个奇怪现象，只要执行一次 traceroute 连接就会比较通畅
 before_install:
 - sudo apt-get install traceroute
 - traceroute uc.qbox.me
