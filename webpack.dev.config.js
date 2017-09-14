@@ -36,7 +36,7 @@ config.module.rules.push(
         options: {
           modules: true,
           sourceMap: true,
-          localIdentName: 'cpa-[path]-[local]'
+          localIdentName: '[path]-[local]'
         }
       },
       'less-loader'
