@@ -18,7 +18,7 @@ else
   echo
   git push origin development
   echo
-  echo "正在与 master 分支合并..."
+  echo "正在本地与 master 分支合并..."
   echo
   git checkout master
   git merge development --no-ff --quiet --no-edit
@@ -31,7 +31,7 @@ else
   echo
   git checkout development
   echo
-  echo "已返回 development 分支。"
+  echo "已返回本地 development 分支。"
   echo
   echo "请在 Travis Dashboard 中查看结果:"
   echo "https://www.travis-ci.org/MagicCube/cdn-pub-automation/"
