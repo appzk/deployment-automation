@@ -7,6 +7,7 @@ const qiniuAK = 'i2MWHt0sGlWTk5xapixEaXAn3XzfsCkoOJrAJ7Kr';
 // 通过下面的链接创建新的
 // https://portal.qiniu.com/bucket/create
 const qiniuBucket = 'test';
+const qiniuCdnDomain = '7xozrb.com1.z0.glb.clouddn.com';
 
 // 我们不希望将秘钥（即 SK）写死在 config 里上传至 Github。
 // 因此我们选择通过环境变量的形式传递 SK，并由 Travis 提供的工具进
@@ -19,18 +20,30 @@ if (!qiniuSK) {
 // 请参考 https://github.com/lyfeyaj/qn-webpack
 const QiniuPlugin = require('qn-webpack');
 
+// 请参考我开发的 [webpack-plugin-hash](https://github.com/MagicCube/webpack-plugin-hash)
+const HashPlugin = require('webpack-plugin-hash');
+
 // 继承自生产环境的配置
 const config = require('./webpack.config');
 
-// 配置七牛插件
-const qiniuPlugin = new QiniuPlugin({
-  // 即 AK
-  accessKey: qiniuAK,
-  // 即 SK
-  secretKey: qiniuSK,
-  bucket: qiniuBucket,
-  path: '[hash]/'
-});
-config.plugins.push(qiniuPlugin);
+// 用 URL 替换原先的绝对路径
+// 如果你的网站采用了 HTTPS，则请替换为 //${qiniuCdnDomain}/[hash]/
+config.output.publicPath = `http://${qiniuCdnDomain}/[hash]/`;
+
+config.plugins.push(
+  new QiniuPlugin({
+    // 即 AK
+    accessKey: qiniuAK,
+    // 即 SK
+    secretKey: qiniuSK,
+    bucket: qiniuBucket,
+    path: '[hash]/'
+  }),
+  new HashPlugin({
+    callback: (error, hash) => {
+      console.info(`Root URL of assets: http://${qiniuCdnDomain}/${hash}/`);
+    }
+  })
+);
 
 module.exports = config;
