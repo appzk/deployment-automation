@@ -1,0 +1,14 @@
+branches:
+  only:
+  - master
+language: node_js
+node_js:
+- '8'
+cache:
+  directories: node_modules
+script: npm test
+after_success:
+- npm run build
+env:
+  global:
+    secure: yPvDZYfjYk4vBjav7d+L4IVdOO09eyUWtFLGFqs5dqOlfikQo2B9+zD42B12o0HOqhhe3Gj/NY6W9YPGls+gB5ocRXVz4EviBxEg/sEHKjp0Zj6qDu+WYUELVur+8xdpoNmT85AslEQnrTQUxsA0JukTvU1uO+CtYgDlbC0SOg1tSJA5yt8meWwbzCcrxRr5d4A0l9Y/3adMAwRrUHymDXPzdQI+OyS+xLDNAlAmOiqyHQdhzl+82Hse0hzPGkRpEAtqKXgTaS9KcMpAUM2DeDtjwdVjodI3M5FhERwVhPfzFpITnSyWd97Rc1KjPeA9y/ghXz3av/RvQSI1VCTdNKh6O6c3Osol6+zTuIBffHjY+Z4flFyrNJS+8snWhcFZxgeNAllvy9vJ7EyXUXSCkNlv6t100olosqwuzFJ5JEbwHdZ6a2zglxVx8Lz6jP7Y0YeBbtAMyB+hQD18lHBreKJ0eNjsqkmhjBvgDmTNgjf5qyxFN8ebGo/V8FqWwtEuV8d6jVxK10rkU98FaBlo33QNw0GtJFNhCGizHEj1GIv1FrkEG7qHBwq1gAV0j1Ym6MKx5NEUVG26Yc/ZI95nMuj13tKQLUtdlAoHj1lcUArubWaCltvQ/4J/PexK1q4X+0tzgokRepXB1zZY1LMdTXTyXMxCNamqOZBqjpXlS9I=
