@@ -41,7 +41,11 @@ config.plugins.push(
   }),
   new HashPlugin({
     callback: (error, hash) => {
+      console.info('\n');
+      console.info('*'.repeat(80));
       console.info(`Root URL of assets: http://${qiniuCdnDomain}/${hash}/`);
+      console.info('*'.repeat(80));
+      console.info('\n');
     }
   })
 );
