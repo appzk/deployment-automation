@@ -7,7 +7,8 @@
     "build": "webpack -p",
     "dev": "webpack-dev-server --config webpack.dev.config.js",
     "pub": "webpack -p --config webpack.pub.config.js",
-    "start": "npm run dev"
+    "start": "npm run dev",
+    "test": "echo \"Specified your own test command in the real world.\""
   },
   "repository": {
     "type": "git",
