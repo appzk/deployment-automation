@@ -8,7 +8,7 @@
     "dev": "webpack-dev-server --config webpack.dev.config.js",
     "pub": "webpack -p --config webpack.pub.config.js",
     "start": "npm run dev",
-    "test": "echo \"Specified your own test command in the real world.\""
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -37,6 +37,7 @@
     "eslint-plugin-jsx-a11y": "^6.0.2",
     "eslint-plugin-react": "^7.3.0",
     "extract-text-webpack-plugin": "^3.0.0",
+    "jest": "^21.1.0",
     "less": "^2.7.2",
     "less-loader": "^4.0.5",
     "mkdirp": "^0.5.1",
