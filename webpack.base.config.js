@@ -51,7 +51,7 @@ module.exports = {
   plugins: [
     // 每次打包前，先清除 build 目录
     new CleanWebpackPlugin(
-      ['build'],
+      ['build', 'gh-pages'],
       { root: path.resolve('./'), verbose: true }
     ),
     new webpack.optimize.CommonsChunkPlugin({
