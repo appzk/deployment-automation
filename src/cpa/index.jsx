@@ -10,7 +10,10 @@ function renderMountPoint() {
   ReactDom.render(
     (
       <AppContainer>
-        <App />
+        <App
+          lastBuildHash={window.LAST_BUILD_HASH}
+          lastBuildTime={window.LAST_BUILD_TIME}
+        />
       </AppContainer>
     ),
     document.getElementById('mount-point')
