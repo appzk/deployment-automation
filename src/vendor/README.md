@@ -7,4 +7,4 @@
 * vendor.js
 * vendor.css
 
-> React、React-DOM 等常用库在 production 模式下，将不会打包到 vendor.js 中。
+> React、React-DOM 等常用库在 production 模式下，将不被会打包到 vendor.js 中。
