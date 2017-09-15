@@ -57,7 +57,7 @@ config.plugins.push(
           }
         }
       );
-      console.info('Generated. Please visit https://magiccube.github.io/cdn-pub-automation/');
+      console.info('Generated. Please visit https://magiccube.github.io/deployment-automation/');
       console.info('*'.repeat(80));
       console.info('\n');
     }

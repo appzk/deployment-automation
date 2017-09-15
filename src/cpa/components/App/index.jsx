@@ -23,7 +23,7 @@ export default class App extends PureComponent {
   render() {
     return (
       <div className={styles.container}>
-        <h1>Welcome to cdn-pub-automation</h1>
+        <h1>Welcome to deployment-automation</h1>
         {this.renderBuildSection()}
         <section>
           <h3>About</h3>

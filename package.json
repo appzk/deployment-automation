@@ -1,7 +1,7 @@
 {
-  "name": "cdn-pub-automation",
+  "name": "deployment-automation",
   "version": "1.0.0",
-  "description": "一个用 Github + Travis CI + 七牛搭建的前端自动化发布示例。",
+  "description": "前端工程云端自动化部署示例，一套采用 Github + Travis CI + 七牛 CDN 搭建的免费解决方案。",
   "main": "index.js",
   "scripts": {
     "build": "webpack -p",
@@ -12,12 +12,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MagicCube/cdn-pub-automation.git"
+    "url": "git+https://github.com/MagicCube/deployment-automation.git"
   },
   "author": "Henry Li <henry1943@163.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/MagicCube/cdn-pub-automation/issues"
+    "url": "https://github.com/MagicCube/deployment-automation/issues"
   },
   "homepage": "https://zhuanlan.zhihu.com/p/29231319",
   "devDependencies": {

@@ -1,17 +1,19 @@
-# cdn-pub-automation
+# deployment-automation
 
-[![Build Status](https://travis-ci.org/MagicCube/cdn-pub-automation.svg?branch=master)](https://travis-ci.org/MagicCube/cdn-pub-automation)
+[![Build Status](https://travis-ci.org/MagicCube/deployment-automation.svg?branch=master)](https://travis-ci.org/MagicCube/deployment-automation)
 
-一个用 Github + Travis CI + 七牛搭建的前端自动化发布示例。详见我在知乎上发表的文章[《利用 Git 和 CDN 在云端自动化部署前端工程》](https://zhuanlan.zhihu.com/p/29231319)。
+前端工程云端自动化部署示例，一套采用 Github + Travis CI + 七牛 CDN 搭建的免费解决方案。
+
+详见我在知乎上发表的文章[《利用 Git 和 CDN 在云端自动化部署前端工程》](https://zhuanlan.zhihu.com/p/29231319)。
 
 欢迎在知乎上关注[我](https://www.zhihu.com/people/henry-li-03/activities)和我的知乎专栏[《前端零栈》](https://zhuanlan.zhihu.com/fr0nt-end/)。
 
 
 ## 主分支与开发分支
 
-* [主分支 master](https://github.com/MagicCube/cdn-pub-automation)
-* [开发分支 devleopment](https://github.com/MagicCube/cdn-pub-automation/tree/development)
-* [Github Pages 分支 gh-pages](https://github.com/MagicCube/cdn-pub-automation/tree/gh-pages)
+* [主分支 master](https://github.com/MagicCube/deployment-automation)
+* [开发分支 devleopment](https://github.com/MagicCube/deployment-automation/tree/development)
+* [Github Pages 分支 gh-pages](https://github.com/MagicCube/deployment-automation/tree/gh-pages)
 
 ## 自动化
 
@@ -32,4 +34,4 @@ git checkout development
     * 自动执行测试脚本
     * 自动执行云端打包
     * 自动将打包结果上传至七牛 CDN
-    * 自动更新 Github Page：[https://magiccube.github.io/cdn-pub-automation/](https://magiccube.github.io/cdn-pub-automation/)
+    * 自动更新 Github Page：[https://magiccube.github.io/deployment-automation/](https://magiccube.github.io/deployment-automation/)

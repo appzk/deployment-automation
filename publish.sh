@@ -14,7 +14,7 @@ elif [ $BRANCH != "(development)" ]; then
   echo "\033[31m[错误] 当前 $BRANCH 不是 development 分支，请先执行 git checkout development 切换分支。\033[0m"
   echo
 else
-  echo "\033[32m开始云端自动化打包与发布... \033[0m"
+  echo "\033[32m开始云端自动化部署... \033[0m"
   echo
   echo "\033[32m[远程] 正在将本地更改提交到 development 分支... \033[0m"
   echo
@@ -29,16 +29,16 @@ else
   echo
   git push origin master
   echo
-  echo "\033[32m[远程] 已完成 master 分支合并，并已触发云端打包发布流程。 \033[0m"
+  echo "\033[32m[远程] 已完成 master 分支合并，并已触发云端部署流程。 \033[0m"
   echo
   git checkout development
   echo
   echo "\033[32m[本地] 已返回 development 分支。 \033[0m"
   echo
   echo "请在 Travis Dashboard 中查看结果:"
-  echo "\033[36mhttps://www.travis-ci.org/MagicCube/cdn-pub-automation/ \033[0m"
+  echo "\033[36mhttps://www.travis-ci.org/MagicCube/deployment-automation/ \033[0m"
   echo
   echo "如果 Travis 正处在运行高峰，云端打包会出现延迟，你也可以在这里查看结果:"
-  echo "\033[36mhttps://www.travis-ci.org/MagicCube/cdn-pub-automation/branches \033[0m"
+  echo "\033[36mhttps://www.travis-ci.org/MagicCube/deployment-automation/branches \033[0m"
   echo
 fi
