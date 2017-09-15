@@ -14,7 +14,7 @@ const ASSETS_PUBLIC_PATH = '/assets/';
 module.exports = {
   context: SRC_PATH,
   entry: {
-    cpa: ['./cpa'], // CPA 是 deployment-automation 的缩写
+    da: ['./da'], // da 是 deployment-automation 的缩写
     vendor: './vendor',
   },
   resolve: {

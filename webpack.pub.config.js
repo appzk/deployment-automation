@@ -47,7 +47,7 @@ config.plugins.push(
       console.info(`Root URL of assets: https://${qiniuCDNDomain}/${hash}/`);
       console.info('Generating index.html...');
       htmlPublisher.transform(
-        `${config.context}/cpa/index.html`,
+        `${config.context}/da/index.html`,
         path.resolve('./gh-pages/index.html'),
         config.output.publicPath,
         hash,
