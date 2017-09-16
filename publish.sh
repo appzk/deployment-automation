@@ -27,6 +27,7 @@ function print_error {
 }
 
 BRANCH=$(parse_git_branch)
+echo
 if [ $BRANCH == "(development*)" ]; then
   print_error "$BRANCH 尚未完成本地提交。"
 elif [ $BRANCH != "(development)" ]; then
@@ -46,7 +47,7 @@ else
   print_message "[远程] 已完成 master 分支合并，并已触发云端部署流程。"
   git checkout development
   echo
-  print_messageo "[本地] 已返回 development 分支。"
+  print_message "[本地] 已返回 development 分支。"
   print_link "请在 Travis Dashboard 中查看结果:" "https://www.travis-ci.org/MagicCube/deployment-automation/"
   print_link "如果 Travis 正处在运行高峰，云端打包会出现延迟，你也可以在这里查看结果:" "https://www.travis-ci.org/MagicCube/deployment-automation/branches"
 fi
