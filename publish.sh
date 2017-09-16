@@ -34,8 +34,10 @@ elif [ $BRANCH != "(development)" ]; then
   print_error "当前 $BRANCH 不是 development 分支，请先执行 git checkout development 切换分支。"
 else
   print_info "开始云端自动化部署..."
-  print_info "正在将 development 与 master 分支在本地合并..."
+  print_info "正在更新本地 master 分支..."
   git checkout master
+  git pull origin master
+  print_info "正在将 development 与 master 分支在本地合并..."
   git merge development --no-ff --quiet --no-edit
   echo
   print_info "正在将合并结果提交到远程 master 分支..."
