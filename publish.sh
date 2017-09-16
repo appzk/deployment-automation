@@ -37,6 +37,7 @@ else
   print_info "正在更新本地 master 分支..."
   git checkout master
   git pull origin master
+  echo
   print_info "正在将 development 与 master 分支在本地合并..."
   git merge development --no-ff --quiet --no-edit
   echo
