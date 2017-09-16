@@ -6,39 +6,47 @@ function parse_git_branch {
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/(\1$(parse_git_dirty))/"
 }
 
+function print_message {
+  TEXT=$1
+  echo "\033[32m$TEXT \033[0m"
+  echo
+}
+
+function print_link {
+  TEXT=$1
+  LINK=$2
+  echo "$TEXT"
+  echo "\033[36m$LINK \033[0m"
+  echo
+}
+
+function print_error {
+  TEXT=$1
+  echo "\033[31m[错误] $TEXT \033[0m"
+  echo
+}
+
 BRANCH=$(parse_git_branch)
 if [ $BRANCH == "(development*)" ]; then
-  echo "\033[31m[错误] $BRANCH 尚未完成本地提交。\033[0m"
-  echo
+  print_error "$BRANCH 尚未完成本地提交。"
 elif [ $BRANCH != "(development)" ]; then
-  echo "\033[31m[错误] 当前 $BRANCH 不是 development 分支，请先执行 git checkout development 切换分支。\033[0m"
-  echo
+  print_error "当前 $BRANCH 不是 development 分支，请先执行 git checkout development 切换分支。"
 else
-  echo "\033[32m开始云端自动化部署... \033[0m"
-  echo
-  echo "\033[32m[远程] 正在将本地更改提交到 development 分支... \033[0m"
-  echo
+  print_message "开始云端自动化部署..."
+  print_message "[远程] 正在将本地更改提交到 development 分支..."
   git push origin development
   echo
-  echo "\033[32m[本地] 正在将 development 与 master 分支合并... \033[0m"
-  echo
+  print_message "[本地] 正在将 development 与 master 分支合并..."
   git checkout master
   git merge development --no-ff --quiet --no-edit
   echo
-  echo "\033[32m[远程] 正在将合并结果提交到 master 分支... \033[0m"
-  echo
+  print_message "[远程] 正在将合并结果提交到 master 分支..."
   git push origin master
   echo
-  echo "\033[32m[远程] 已完成 master 分支合并，并已触发云端部署流程。 \033[0m"
-  echo
+  print_message "[远程] 已完成 master 分支合并，并已触发云端部署流程。"
   git checkout development
   echo
-  echo "\033[32m[本地] 已返回 development 分支。 \033[0m"
-  echo
-  echo "请在 Travis Dashboard 中查看结果:"
-  echo "\033[36mhttps://www.travis-ci.org/MagicCube/deployment-automation/ \033[0m"
-  echo
-  echo "如果 Travis 正处在运行高峰，云端打包会出现延迟，你也可以在这里查看结果:"
-  echo "\033[36mhttps://www.travis-ci.org/MagicCube/deployment-automation/branches \033[0m"
-  echo
+  print_messageo "[本地] 已返回 development 分支。"
+  print_link "请在 Travis Dashboard 中查看结果:" "https://www.travis-ci.org/MagicCube/deployment-automation/"
+  print_link "如果 Travis 正处在运行高峰，云端打包会出现延迟，你也可以在这里查看结果:" "https://www.travis-ci.org/MagicCube/deployment-automation/branches"
 fi
